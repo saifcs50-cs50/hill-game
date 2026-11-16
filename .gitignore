@@ -1,0 +1,26 @@
+.work/
+build/
+game/.godot/
+game/android/
+
+# --- added for the public repo ---
+.env
+.env.*
+!.env.example
+*.jks
+*.keystore
+key.properties
+keystore.properties
+local.properties
+google-services.json
+*.apk
+*.aab
+*.log
+.DS_Store
+node_modules/
+build/
+dist/
+target/
+.gradle/
+.idea/
+__pycache__/
