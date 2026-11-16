@@ -207,7 +207,7 @@ static func snow_particles(amount: int, speed: float, size: float, alpha: float)
 	return p
 
 
-# --- foreground silhouettes ---
+# Foreground silhouettes
 
 ## A repeating strip of dark shapes growing up from the bottom edge of the screen.
 static func foreground_mesh(spec: StageSpec, period: float) -> StageMesh:

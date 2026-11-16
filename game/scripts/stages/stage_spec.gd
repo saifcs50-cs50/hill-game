@@ -4,14 +4,14 @@ extends RefCounted
 ## layers, and which decoration set to use. Built by StageLibrary; read by Terrain and Backdrop.
 ## Friction and gravity come from Catalog.STAGES (the shared contract), not from here.
 
-# --- identity and physics (copied from Catalog.STAGES) ---
+# Identity and physics (copied from Catalog.STAGES)
 var id := ""
 var terrain_seed := 0
 var bump_seed := 77 ## seed of the fine surface bumps
 var friction := 1.0
 var gravity := 820.0
 
-# --- terrain shape: "hills", "dunes", "icy" or "craters" (see TerrainShape) ---
+# Terrain shape: "hills", "dunes", "icy" or "craters" (see TerrainShape)
 var shape := "hills"
 var flat_start := 700.0 ## everything before this x is perfectly flat
 var flat_end := 2000.0 ## the terrain reaches full strength by this x
@@ -20,7 +20,7 @@ var ramp_dist := 14000.0 ## distance scale of the difficulty ramp
 var noise_frequency := 0.0011
 var shape_params := {}
 
-# --- ground look ---
+# Ground look
 var decor := "meadow" ## "meadow", "desert", "arctic" or "moon"
 var ground_depths := PackedFloat32Array() ## rows of the ground fill, in px below the surface
 var ground_colors: Array[Color] = [] ## one colour per row
@@ -34,7 +34,7 @@ var strata_color := Color.WHITE
 var strata_count := 4
 var pebble_colors: Array[Color] = []
 
-# --- sky ---
+# Sky
 var sky_offsets: Array[float] = []
 var sky_colors: Array[Color] = []
 var sun_anchor := Vector2(0.7, 0.57)

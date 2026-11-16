@@ -55,7 +55,7 @@ func _decor_parts() -> Array:
 	return DecorMeadow.parts()
 
 
-# --- ground fill ---
+# Ground fill
 
 
 func _build_fill(ctx: ChunkContext, m: StageMesh) -> void:
@@ -93,7 +93,7 @@ func _add_rim(chunk: Node2D) -> void:
 	Shapes.line(chunk, _ctx.top, _spec.rim_color, _spec.rim_width)
 
 
-# --- soil detail ---
+# Soil detail
 
 ## Wavy brush-stroke layers following the surface at several depths.
 func _build_strata(ctx: ChunkContext, m: StageMesh) -> void:

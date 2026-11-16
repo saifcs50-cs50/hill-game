@@ -57,7 +57,7 @@ func _current_id() -> String:
 	return Catalog.VEHICLE_ORDER[_index]
 
 
-# --- Building ------------------------------------------------------------------------------
+# Building
 
 func _build_vehicle_panel() -> PanelContainer:
 	var panel := UiKit.panel(UiKit.PANEL_FILL, UiKit.PANEL_RADIUS, 14)
@@ -183,7 +183,7 @@ func _build_upgrade_row(key: String) -> PanelContainer:
 	return card
 
 
-# --- Updating ------------------------------------------------------------------------------
+# Updating
 
 func _refresh() -> void:
 	var id := _current_id()
@@ -272,7 +272,7 @@ func _on_coins_changed(_coins: int) -> void:
 	_refresh()
 
 
-# --- Actions -------------------------------------------------------------------------------
+# Actions
 
 func _browse(step: int) -> void:
 	_index = posmod(_index + step, Catalog.VEHICLE_ORDER.size())

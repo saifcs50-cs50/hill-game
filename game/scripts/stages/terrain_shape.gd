@@ -78,7 +78,7 @@ func _hills_up(x: float) -> float:
 	return sin(x * 0.0021) * 150.0 + sin(x * 0.0057 + 1.3) * 60.0 + _hills.get_noise_1d(x) * 230.0 + sin(x * 0.0113 + 0.7) * 20.0
 
 
-# --- desert: one dune per cell, a long climb then a drop, with a few big crests ---
+# Desert: one dune per cell, a long climb then a drop, with a few big crests
 
 
 func _dunes(x: float) -> float:
@@ -105,7 +105,7 @@ static func _dune_profile(f: float) -> float:
 	return 0.5 + 0.5 * cos(PI * d)
 
 
-# --- arctic: medium hills with flat icy stretches where the mask is closed ---
+# Arctic: medium hills with flat icy stretches where the mask is closed
 
 ## 0 on flat ice, 1 on open hills.
 func open_ice(x: float) -> float:
@@ -117,7 +117,7 @@ func _icy(x: float, open: float) -> float:
 	return hills * lerpf(_param("flat_scale", 0.03), 1.0, open)
 
 
-# --- moon: one feature per cell, a crater, a launch ramp or just rolling ground ---
+# Moon: one feature per cell, a crater, a launch ramp or just rolling ground
 
 
 func _craters(x: float) -> float:

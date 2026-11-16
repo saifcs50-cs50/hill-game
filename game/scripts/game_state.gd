@@ -67,7 +67,7 @@ func _ready() -> void:
 	load_game()
 
 
-# --- Coins ---------------------------------------------------------------------------------
+# Coins
 
 func add_coins(amount: int) -> void:
 	if amount <= 0:
@@ -81,7 +81,7 @@ func can_afford(price: int) -> bool:
 	return price <= _coins
 
 
-# --- Vehicles and stages -------------------------------------------------------------------
+# Vehicles and stages
 
 func owns_vehicle(vehicle_id: String) -> bool:
 	return _owned_vehicles.has(vehicle_id)
@@ -132,7 +132,7 @@ func select_stage(stage_id: String) -> bool:
 	return true
 
 
-# --- Upgrades ------------------------------------------------------------------------------
+# Upgrades
 
 func upgrade_level(vehicle_id: String, key: String) -> int:
 	var levels: Dictionary = _upgrades.get(vehicle_id, {})
@@ -170,7 +170,7 @@ func upgrade(vehicle_id: String, key: String) -> bool:
 	return true
 
 
-# --- Runs ----------------------------------------------------------------------------------
+# Runs
 
 ## Best distance in metres for this stage and vehicle (0 if never driven).
 func best_for(stage_id: String, vehicle_id: String) -> float:
@@ -204,7 +204,7 @@ func reset_progress() -> void:
 	_commit()
 
 
-# --- Settings ------------------------------------------------------------------------------
+# Settings
 
 func set_music(enabled: bool) -> void:
 	if enabled == _music_on:
@@ -229,7 +229,7 @@ func take_pending_screen() -> String:
 	return screen if not screen.is_empty() else "main"
 
 
-# --- Save and load -------------------------------------------------------------------------
+# Save and load
 
 ## Writes the save file (to a temporary file first, then renamed over the real one).
 func save_game() -> bool:
@@ -312,7 +312,7 @@ func _migrate_legacy(file: ConfigFile) -> void:
 		_best[START_STAGE] = {START_VEHICLE: legacy}
 
 
-# --- Reading -------------------------------------------------------------------------------
+# Reading
 
 func _read_progress(file: ConfigFile) -> void:
 	_coins = maxi(_to_int(file.get_value("meta", "coins", 0)), 0)
@@ -379,7 +379,7 @@ func _to_float(value: Variant) -> float:
 	return 0.0
 
 
-# --- Writing -------------------------------------------------------------------------------
+# Writing
 
 func _write_meta(file: ConfigFile) -> void:
 	file.set_value("meta", "version", SAVE_VERSION)
